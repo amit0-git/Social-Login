@@ -168,64 +168,9 @@ JWT stored in HTTP-only cookie for subsequent requests
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### CORS Configuration
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    CORS Security                          │
-├─────────────────────────────────────────────────────────────┤
-│ • Origin restricted to specified domain                   │
-│ • Credentials: true (allows cookies)                      │
-│ • Prevents unauthorized cross-origin requests              │
-└─────────────────────────────────────────────────────────────┘
-```
 
-## Environment Variables Required
 
-### Frontend (.env)
-```
-VITE_BACKEND_URL=http://localhost:5000
-VITE_GOOGLE_CLIENT_ID=your_google_client_id
-VITE_GITHUB_CLIENT_ID=your_github_client_id
-```
 
-### Backend (.env)
-```
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GITHUB_CLIENT_ID=your_github_client_id
-GITHUB_CLIENT_SECRET=your_github_client_secret
-JWT_SECRET=your_jwt_secret_key
-CORS_ORIGIN=http://localhost:5173
-NODE_ENV=development
-```
-
-## API Endpoints
-
-### Authentication Routes
-```
-POST /auth/google     - Google OAuth login
-POST /auth/github     - GitHub OAuth login
-POST /auth/demo       - Demo login (testing)
-GET  /auth/status     - Check authentication status
-POST /auth/logout     - Logout user
-GET  /auth/test       - Test endpoint
-```
-
-## Error Handling
-
-### Common Error Scenarios
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Error Handling                          │
-├─────────────────────────────────────────────────────────────┤
-│ • OAuth provider not configured                           │
-│ • Invalid authorization code                               │
-│ • Network failures during token exchange                  │
-│ • JWT token expiration                                    │
-│ • Invalid JWT tokens                                      │
-│ • CORS violations                                         │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ## State Management Flow
 
